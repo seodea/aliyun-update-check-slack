@@ -89,7 +89,7 @@ For example :
 	
 			# It's working. csv fie incode is ANSI.
 	
-			with open(csv_file, newline='') as csvfile:
+			with open(csv_file, newline='',encoding='UTF-8-sig') as csvfile:
 				reader = csv.DictReader(csvfile)
 				for row in reader:
 					log.append(dict(row))
@@ -99,7 +99,7 @@ For example :
 			
 			# It's working. csv fie incode is ANSI.
 			
-			with open(csv_file, 'w', newline='') as csvfile:
+			with open(csv_file, 'w', newline='',encoding='UTF-8') as csvfile:
 				writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
 				writer.writeheader()
 				for data in log:
