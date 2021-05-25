@@ -20,7 +20,7 @@ def ReadCSVasDict(csv_file):
     log=[]
 
     # It's working. csv fie incode is ANSI.
-    with open(csv_file, newline='') as csvfile:
+    with open(csv_file, newline='',encoding='UTF-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             log.append(dict(row))
@@ -30,7 +30,7 @@ def ReadCSVasDict(csv_file):
 def WriteDictToCSV(csv_file,csv_columns,dict_data):
 
     # It's working. csv fie incode is ANSI.
-    with open(csv_file, 'w', newline='') as csvfile:
+    with open(csv_file, 'w', newline='',encoding='UTF-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
         writer.writeheader()
         for data in log:
